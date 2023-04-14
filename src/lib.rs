@@ -3,18 +3,9 @@
 use rand::rngs::SmallRng;
 use rand::{Rng, SeedableRng};
 
-use soroban_sdk::{contracterror, contractimpl, Bytes, BytesN, Env};
+use soroban_sdk::{contractimpl, Bytes, BytesN, Env};
 
 pub struct Contract;
-
-#[contracterror]
-#[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-#[repr(u32)]
-pub enum Error {
-    MissingPew = 1,
-    WrongString = 2,
-    WrongHash = 3,
-}
 
 #[contractimpl]
 impl Contract {
