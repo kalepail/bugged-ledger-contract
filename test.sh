@@ -6,4 +6,4 @@ contract_id=$(soroban contract deploy --wasm target/wasm32-unknown-unknown/relea
 
 echo $contract_id
 
-soroban contract invoke --id $contract_id --source SBCKNWG5O3SRVA26LPWGBMHV2FA7ITVBQIARL3LALVU6DPELFIJRQDGK --rpc-url "https://rpc-futurenet.stellar.org:443" --network-passphrase "Test SDF Future Network ; October 2022" -- test --source GBHAH3S6PILJCK274NZWZUGHSCFLZ37GNBQH5N5JSSSQCV5VJOAGZKQ3
+soroban contract invoke --id $contract_id --source SBCKNWG5O3SRVA26LPWGBMHV2FA7ITVBQIARL3LALVU6DPELFIJRQDGK --rpc-url "https://rpc-futurenet.stellar.org:443" --network-passphrase "Test SDF Future Network ; October 2022" -- test
