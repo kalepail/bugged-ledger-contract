@@ -2,7 +2,7 @@
 
 use std::println;
 
-use soroban_sdk::{testutils::Address as _, Address, Env};
+use soroban_sdk::Env;
 
 use crate::{Contract, ContractClient};
 
@@ -14,9 +14,7 @@ fn test() {
     let contract_id = env.register_contract(None, Contract);
     let client = ContractClient::new(&env, &contract_id);
 
-    let account_1 = Address::random(&env);
+    let res = client.test();
 
-    let res = client.test(&account_1);
-
-    println!("res: {:?}", res);
+    println!("{:?}", res);
 }
