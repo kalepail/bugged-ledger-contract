@@ -10,10 +10,9 @@ pub struct Contract;
 #[contractimpl]
 impl Contract {
     pub fn test(env: Env) -> BytesN<32> {
-        let mut array = [0u8; 32];
         let state = get_entropy(&env);
-
         let mut rng_store = SmallRng::seed_from_u64(state);
+        let mut array = [0u8; 32];
 
         rng_store.fill(&mut array[..]);
 
