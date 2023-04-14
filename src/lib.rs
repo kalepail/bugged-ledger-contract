@@ -16,7 +16,8 @@ impl Contract {
 
         rng.fill(&mut array[..]);
 
-        let hash = env.crypto().sha256(&Bytes::from_slice(&env, &array));
+        let bytes = Bytes::from_slice(&env, &array);
+        let hash = env.crypto().sha256(&bytes);
 
         env.storage().set(&hash, &array); // <-- comment this line out and it all "magically" works
 
