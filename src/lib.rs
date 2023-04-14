@@ -28,7 +28,7 @@ impl Contract {
 fn get_entropy(env: &Env) -> u64 {
     let ledger_sequence = u64::from(env.ledger().sequence());
     let ledger_timestamp = env.ledger().timestamp();
-    // OR comment out the above and use the below and it will also "magically" work even whe the storage line above is used /shrug
+    // OR comment out the two lines above and use the two lines below and it will also "magically" work even when the storage line from above is used /shrug
     // let ledger_sequence = u64::from(u32::MAX);
     // let ledger_timestamp = u64::MAX;
     let entropy = u64::MIN
